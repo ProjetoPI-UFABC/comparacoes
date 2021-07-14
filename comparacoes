@@ -1,0 +1,74 @@
+package projetopi;
+
+import java.util.Scanner;
+
+public class ProjetoPI {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);   
+     double peso, altura, IMC;
+     
+     //Entradas e Instruções
+     System.out.println("Este programa Calcula o seu IMC");
+     System.out.println("Utilize ponto (.) como separador");
+     System.out.println("Digite sua Altura em metros: ");
+     altura = input.nextDouble();
+     System.out.println("Digite seu Peso em Kg: ");
+     peso = input.nextDouble();
+     
+     //Calculos
+     Math.ceil(IMC = peso / (altura*altura));
+     
+     //Classificações
+     
+     if(IMC<18.5){
+        System.out.println("Diagnóstico: Baixo Peso!"); 
+     }
+     else if(IMC>=18.5 && IMC<=24.9){
+        System.out.println("Diagnóstico: Peso Normal!");  
+     }
+     else if(IMC>=25 && IMC<=29.9){
+        System.out.println("Diagnóstico: Sobrepeso - !Atenção!");  
+     }    
+     else if(IMC>=30 && IMC<=34.9){
+        System.out.println("Diagnóstico: Obesidade Classe I");  
+     }
+     else if(IMC>=35 && IMC<=39.9){
+        System.out.println("Diagnóstico: Obesidade Classe II");  
+     }
+     else if(IMC>=40){
+        System.out.println("Diagnóstico: Obesidade Classe III");  
+     }   
+     System.out.printf("IMC: %.1f ", IMC);
+     
+     comparacoes(IMC);
+    }
+    
+    public static void comparacoes ( double IMC ){
+        
+        int ind = 0;
+        
+        // Comparações com o Brasil:
+        
+        System.out.print("\n O IMC médio do brasileiro adulto é 25 kg/m².");
+        
+        while ( ind < 1 ){
+                  
+            if ( IMC < 25){
+                System.out.print("\n O seu IMC é menor que o da média dos brasileiros.");
+            }
+                
+            else if ( IMC == 25){
+                System.out.print("\n O seu IMC é igual a media dos brasileiros.");
+            }
+                
+            else if ( IMC > 25 ){
+                System.out.print("\n O seu IMC é maior que o da média dos brasileiros.");
+            }
+                                    
+        ind++;
+            
+        }
+    }
+    
+}
